@@ -13,7 +13,7 @@ export default function List({ navigation }) {
 
     useEffect(() => {
         AsyncStorage.getItem('user').then(user_id => {
-            const socket = socketio('http://10.0.0.100:3333', {
+            const socket = socketio('http://192.168.1.6:3333', {
                 query: { user_id }
             })
         
@@ -36,7 +36,7 @@ export default function List({ navigation }) {
         
         navigation.navigate('Login');
 
-        console.log(AsyncStorage.getItem('user'))
+        
     }
     
     return (
@@ -46,8 +46,8 @@ export default function List({ navigation }) {
             <ScrollView>
                 {techs.map(tech => <SpotList key={tech} tech={tech}/>)}
             </ScrollView>
-            <TouchableOpacity onPress={handleLogout}>
-                <Text>
+            <TouchableOpacity onPress={handleLogout} style={styles.button}>
+                <Text style={styles.buttonText}>
                 Logout
                 </Text>
             
@@ -66,5 +66,17 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         alignSelf: 'center',
         marginTop: 10
+    },
+    button: {
+        height: 42,
+        backgroundColor: '#f05a5b',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 2,
+    },
+
+    buttonText: {
+        color: '#FFF',
+
     }
 })

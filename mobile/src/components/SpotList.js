@@ -26,18 +26,17 @@ function SpotList({ tech, navigation }) {
         <FlatList
             style={styles.list}
             data={spots}
-            keyExtractor={spot => spot.id}
+            keyExtractor={spot => spot._id}
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({ item }) => (
-                <View style={styles.lisItem}>
-                    <Image style={styles.thumbnail} source={{uri: item.thumbnail_url}} />
+                <View style={styles.listItem}>
+                    <Image style={styles.thumbnail} source={{ uri: item.thumbnail_url }} />
                     <Text style={styles.company}></Text>
                     <Text style={styles.price}>{item.price ? `R$${item.price}` : 'GRATUITO'}</Text>
-                    <TouchableOpacity style={styles.button} onPress={() => handleNavigate(item.id)}>
+                    <TouchableOpacity style={styles.button} onPress={() => handleNavigate(item._id)}>
                         <Text style={styles.buttonText}>Solicitar reserva</Text>
                     </TouchableOpacity>
-                    {console.log(item.thumbnail_url)}
                 </View>
             )}
             />
@@ -64,7 +63,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
 
-    lisItem: {
+    listItem: {
         marginRight: 15,
 
     },
