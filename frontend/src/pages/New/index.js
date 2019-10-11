@@ -11,12 +11,12 @@ export default function New({ history }) {
     const [price, setPrice] = useState('')
     const [thumbnail, setThumbnail] = useState(null)
 
-    // const preview = useMemo(
-    //     () => {
-    //         return thumbnail ? URL.createObjectURL(thumbnail) : null;
-    //     },
-    //     [thumbnail]
-    // )
+    const preview = useMemo(() =>
+    thumbnail
+      ? URL.createObjectURL(thumbnail)
+      : null
+    , [thumbnail])
+    
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -37,7 +37,7 @@ export default function New({ history }) {
     }
     return (
         <form onSubmit={handleSubmit}>
-        <label id='thumbnail' >
+        <label id='thumbnail' style={{backgroundImage: `url(${preview})`}}>
             <input type="file"  onChange={event => setThumbnail(event.target.files[0])}/>
             <img src={camera} alt="img-thun"/>
             

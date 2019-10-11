@@ -31,12 +31,13 @@ function SpotList({ tech, navigation }) {
             showsHorizontalScrollIndicator={false}
             renderItem={({ item }) => (
                 <View style={styles.lisItem}>
-                    <Image style={styles.thumbnail} source={{uri: 'item.thumbnail_url'}} />
-                    <Text style={styles.company}>{item.company}</Text>
+                    <Image style={styles.thumbnail} source={{uri: item.thumbnail_url}} />
+                    <Text style={styles.company}></Text>
                     <Text style={styles.price}>{item.price ? `R$${item.price}` : 'GRATUITO'}</Text>
                     <TouchableOpacity style={styles.button} onPress={() => handleNavigate(item.id)}>
                         <Text style={styles.buttonText}>Solicitar reserva</Text>
                     </TouchableOpacity>
+                    {console.log(item.thumbnail_url)}
                 </View>
             )}
             />
