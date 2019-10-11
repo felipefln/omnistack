@@ -1,8 +1,39 @@
+<p align="center">
+  <img src="mobile/src/assets/logo@3x.png" />
+</p>
+
+
 # Omnistack - Semana Omnistack - Projeto AirCnC
+
+<p align="center">
+Airbnb like (Air Coffee &amp; Code) to booking spots for developers.
 
 Projeto AirCnC - Projeto criado juntamento com o bootcamp "Semana Omnistack 0.9", onde foi proposto criar um projeto, utilizando a stack Javascript.
 
-## Getting Started
+# Stack
+
+- Frontend
+  - ReactJS
+  - Socket.io
+  - Axios
+  - \* [check package.json](/frontend/package.json)
+
+- Mobile
+  - React Native
+  - Expo
+  - Socket.io
+  - Axios
+  - \* [check package.json](/mobile/package.json)  
+
+- Backend
+  - Node.js
+  - Express
+  - Socket.io
+  - MongoDB
+  - Mongoose
+  - Multer
+  - Dotenv
+  - \* [check package.json](/backend/package.json)
 
 ### Requirements
 
